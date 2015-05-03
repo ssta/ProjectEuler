@@ -30,4 +30,8 @@ public class Problem4 {
     String result = String.valueOf(max);
     return result;
   }
+
+  /* A test change to see what IDEA is putting in the autor field by default
+  (it's a confusing issue)
+   */
 }
