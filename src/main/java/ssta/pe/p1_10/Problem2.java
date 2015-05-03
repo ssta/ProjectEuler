@@ -30,6 +30,7 @@ public class Problem2 {
       a = t + b;
 
     } while (a < MAX);
-    return String.valueOf(sum);
+    String result = String.valueOf(sum);
+    return result;
   }
 }

@@ -3,7 +3,7 @@ package ssta.pelib;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Math {
+public class SsMath {
     /**
      * return the ith triangle number
      */

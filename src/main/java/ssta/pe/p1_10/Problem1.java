@@ -1,6 +1,6 @@
 package ssta.pe.p1_10;
 
-import static ssta.pelib.Math.triangle;
+import static ssta.pelib.SsMath.triangle;
 
 /**
  * Created by ssta on 03/05/15.
@@ -21,6 +21,7 @@ public class Problem1 {
     long sum = 3 * (triangle(MAX / 3)) + 5 * (triangle(MAX / 5)) - 15 *
         (triangle(MAX / 15));
 
-    return String.valueOf(sum);
+    String result = String.valueOf(sum);
+    return result;
   }
 }
