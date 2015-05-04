@@ -1,5 +1,7 @@
 package ssta.pelib;
 
+import com.google.common.base.Stopwatch;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +14,29 @@ public class SimplePrimeSieve {
   private List<Long> primes = new ArrayList<>();
 
   /**
+   * Generate primes up to (and including) maxPrime
+   */
+  public static SimplePrimeSieve getSieveWithMaxPrime(long maxPrime) {
+    SimplePrimeSieve sps = new SimplePrimeSieve();
+    OUTERLOOP:
+    for (long l = 2; l <= maxPrime; l++) {
+      for (Long p : sps.getPrimes()) {
+        if (l % p == 0) {
+          continue OUTERLOOP; // not prime
+        }
+      }
+      // yes prime, add to list
+      sps.getPrimes().add(l);
+      System.out.println("found prime: " + l);
+    }
+
+    return sps;
+  }
+
+  /**
    * Get the first maxSize primes
    */
-  public static SimplePrimeSieve getSieveWithMaxPrime(int maxSize) {
+  public static SimplePrimeSieve getSieveWithMaxListSize(int maxSize) {
     SimplePrimeSieve sps = new SimplePrimeSieve();
     OUTERLOOP:
     for (long l = 2; sps.getPrimes().size() < maxSize; l++) {
@@ -25,6 +47,7 @@ public class SimplePrimeSieve {
       }
       // yes prime, add to list
       sps.getPrimes().add(l);
+
     }
 
     return sps;
@@ -32,5 +55,12 @@ public class SimplePrimeSieve {
 
   public List<Long> getPrimes() {
     return primes;
+  }
+
+  public static void main(String[] args) {
+    Stopwatch sw = Stopwatch.createStarted();
+    List<Long> p = SimplePrimeSieve.getSieveWithMaxPrime(2000000).getPrimes();
+    System.out.println(p.size());
+    System.out.println(sw.stop());
   }
 }

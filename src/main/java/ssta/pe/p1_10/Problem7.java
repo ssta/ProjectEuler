@@ -1,7 +1,6 @@
 package ssta.pe.p1_10;
 
 import ssta.pelib.SimplePrimeSieve;
-import ssta.pelib.SsMath;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class Problem7 {
    */
   public String solve() {
     int MAX = 10001;
-    List<Long> primes = SimplePrimeSieve.getSieveWithMaxPrime(MAX).getPrimes();
+    List<Long> primes = SimplePrimeSieve.getSieveWithMaxListSize(MAX).getPrimes();
 
     String result = String.valueOf(primes.get(MAX - 1));
     return result;
