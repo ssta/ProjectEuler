@@ -1,7 +1,5 @@
 package ssta.pe.p1_10;
 
-import ssta.pelib.SsString;
-
 /**
  * Created by ssta on 03/05/15.
  */
@@ -10,11 +8,9 @@ public class Problem5 {
    * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
    * <p>
    * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-   *
-   * @return
    */
   public String solve() {
-    // this is just the product of the distinct prime faqctors os the numbers
+    // this is just the product of the distinct prime factors os the numbers
     // 1..20.
     long r = 2; // 2
     r *= 3; // 3

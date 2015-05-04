@@ -13,4 +13,15 @@ public class SsString {
     }
     return true;
   }
+
+  /**
+   * Return the product of the digits in s.  Assumes s is all digits.
+   */
+  public static long productOfDigits(String s) {
+    long prod = 1;
+    for (char c : s.toCharArray()) {
+      prod *= c - '0';
+    }
+    return prod;
+  }
 }
