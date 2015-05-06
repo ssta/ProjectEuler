@@ -10,21 +10,38 @@ import java.util.Scanner;
  */
 public class PrimesFromFile {
 
-  private static List<Long> primes;
-  private static List<Long> bigPrimes;
+  private static List<Long> longPrimes;
+  private static List<Integer> intPrimes;
 
-  public static List<Long> getPrimes() {
-    if (primes == null) {loadPrimes();}
-    return primes;
+  public static List<Long> getLongPrimes() {
+    if (longPrimes == null) {loadPrimes();}
+    return longPrimes;
+  }
+
+  /**
+   * Return only those longPrimes which fit in an int
+   */
+  public static List<Integer> getIntegerPrimes() {
+    if (intPrimes == null) {
+      List<Long> lp = getLongPrimes();
+      List<Integer> ip = new ArrayList<>();
+      for (long l : longPrimes) {
+        if (l < Integer.MAX_VALUE) {
+          ip.add((int) l);
+        }
+      }
+      intPrimes = ip;
+    }
+    return intPrimes;
   }
 
   private static void loadPrimes() {
-    primes = new ArrayList<>();
+    longPrimes = new ArrayList<>();
     InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream
         ("Primes.txt");
     Scanner sc = new Scanner(is);
     while (sc.hasNextLong()) {
-      primes.add(sc.nextLong());
+      longPrimes.add(sc.nextLong());
     }
   }
 }

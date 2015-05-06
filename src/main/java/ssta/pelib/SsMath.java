@@ -1,5 +1,10 @@
 package ssta.pelib;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by ssta on 03/05/15.
  */
@@ -69,5 +74,56 @@ public class SsMath {
       default:
         return false;
     }
+  }
+
+  /**
+   * Returns the number of divisors of n (includes both 1 and n)
+   */
+  public static int countDivisors(int n) {
+    // we need the prime factors (a^i, b^j, c^k ...) of n;
+    // now the number of divisors is simply (i+i)(j+1)(k+1)...
+    // see: http://mathschallenge.net/index.php?section=faq&ref=number/number_of_divisors
+    // for a proof
+    Map<Integer, Integer> f = factorsWithExponents(n);
+    int prod = 1;
+    for (int i : f.keySet()) {
+      prod *= (f.get(i) + 1);
+    }
+    return prod;
+  }
+
+  /**
+   * Returns a list of prime factors of n
+   */
+  public static List<Integer> factors(int n) {
+    List<Integer> factors = new ArrayList<>();
+    List<Integer> primes = PrimesFromFile.getIntegerPrimes();
+    for (int i : primes) {
+      while (n % i == 0) {
+        factors.add(i);
+        n /= i;
+      }
+      // no need to continue
+      if (i > n) break;
+    }
+
+    return factors;
+  }
+
+  /**
+   * Returns a map of prime factors with exponents instead of repeated
+   * values
+   */
+  public static Map<Integer, Integer> factorsWithExponents(int n) {
+    List<Integer> factors = factors(n);
+    Map<Integer, Integer> f = new HashMap<>(factors.size());
+    for (int i : factors) {
+      if (f.containsKey(i)) {
+        f.put(i, f.get(i) + 1);
+      } else {
+        f.put(i, 1);
+      }
+    }
+    return f;
   }
 }

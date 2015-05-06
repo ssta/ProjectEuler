@@ -27,7 +27,6 @@ public class SimplePrimeSieve {
       }
       // yes prime, add to list
       sps.getPrimes().add(l);
-      System.out.println("found prime: " + l);
     }
 
     return sps;

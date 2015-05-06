@@ -1,8 +1,6 @@
 package ssta.pe.p1_10;
 
 import ssta.pelib.PrimesFromFile;
-import ssta.pelib.SimplePrimeSieve;
-import ssta.pelib.SsMath;
 
 import java.io.OutputStream;
 import java.util.List;
@@ -19,15 +17,12 @@ public class Problem10 {
   public String solve() {
     // this problem is too big for the naive prime sieve from before, so
     // cheat by precomputing the primes and loading them from a resource file.
-    List<Long> primes = PrimesFromFile.getPrimes();
-    System.out.println(primes.size());
+    List<Long> primes = PrimesFromFile.getLongPrimes();
     OutputStream os;
 
     // streams are very nice!
     return primes.stream().
         filter(l -> l < 2000000L).
         reduce(0L, Long::sum).toString();
-    //return String.valueOf(sum);
-
   }
 }
