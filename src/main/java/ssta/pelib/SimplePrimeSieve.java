@@ -52,14 +52,14 @@ public class SimplePrimeSieve {
     return sps;
   }
 
-  public List<Long> getPrimes() {
-    return primes;
-  }
-
   public static void main(String[] args) {
     Stopwatch sw = Stopwatch.createStarted();
     List<Long> p = SimplePrimeSieve.getSieveWithMaxPrime(2000000).getPrimes();
     System.out.println(p.size());
     System.out.println(sw.stop());
+  }
+
+  public List<Long> getPrimes() {
+    return primes;
   }
 }

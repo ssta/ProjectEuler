@@ -1,9 +1,6 @@
 package ssta.pe.p1_10;
 
-import ssta.pelib.SimplePrimeSieve;
 import ssta.pelib.SsString;
-
-import java.util.List;
 
 /**
  * Created by ssta on 03/05/15.

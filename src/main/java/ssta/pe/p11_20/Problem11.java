@@ -1,11 +1,6 @@
 package ssta.pe.p11_20;
 
-import ssta.pelib.PrimesFromFile;
-
 import java.io.ByteArrayInputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 /**

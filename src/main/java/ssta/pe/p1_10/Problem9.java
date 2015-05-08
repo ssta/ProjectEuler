@@ -1,7 +1,6 @@
 package ssta.pe.p1_10;
 
 import ssta.pelib.SsMath;
-import ssta.pelib.SsString;
 
 /**
  * Created by ssta on 03/05/15.
@@ -22,7 +21,7 @@ public class Problem9 {
     for (int a = 0; a < 500; a++) {
       for (int b = 0; b < 500; b++) {
         if (SsMath.isPerfectSquare(a * a + b * b)) {
-          long c = (long)Math.sqrt(a * a + b * b);
+          long c = (long) Math.sqrt(a * a + b * b);
           if (a + b + c == 1000) {
             return String.valueOf(a * b * c);
           }

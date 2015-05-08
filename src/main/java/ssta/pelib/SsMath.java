@@ -1,9 +1,7 @@
 package ssta.pelib;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.math.BigInteger;
+import java.util.*;
 
 /**
  * Created by ssta on 03/05/15.
@@ -125,5 +123,60 @@ public class SsMath {
       }
     }
     return f;
+  }
+
+  /**
+   * The following iterative sequence is defined for the set of positive integers:
+   * <p>
+   * n → n/2 (n is even)
+   * n → 3n + 1 (n is odd)
+   * <p>
+   * Iterating this sequence (we think) always results in a chain ending in 1.
+   * This is an unproven conjecture, but widely thought to be true.
+   * <p>
+   * This method returns a List of the numbers in the chain stating with the
+   * parameter l
+   * <p>
+   * Note that this is a reasonable implementation if the chains are run
+   * independently, but if many chains are the be run at the same time then
+   * it would be better to cache the results and so avoid some work.  For my
+   * current requirements uncached is fine.
+   * <p>
+   * WARNING: No attempt is made to avoid overflow (longs are pretty big, but
+   * it could happen)...
+   *
+   * @param l the number from which to start the chain
+   * @return a list containing the collatz chain from l to 1
+   */
+  public static List<Long> collatzChain(long l) {
+    // linked list is best (a rare case) here
+    List<Long> result = new LinkedList<>();
+    result.add(l);
+    while (l != 1) {
+      if (l % 2 == 0) {
+        l = l / 2;
+      } else {
+        l = (3 * l) + 1;
+      }
+      result.add(l);
+    }
+    return result;
+  }
+
+  public static long collatzChainLength(long l) {
+    return collatzChain(l).size();
+  }
+
+  public static BigInteger bigFactorial(int n){
+    assert n>=0;
+    BigInteger f = BigInteger.ONE;
+    for(int i=1; i<=n; i++){
+      f=f.multiply(BigInteger.valueOf(i));
+    }
+    return f;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(bigFactorial(5));
   }
 }

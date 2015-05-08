@@ -2,10 +2,6 @@ package ssta.pe.p11_20;
 
 import ssta.pelib.SsMath;
 
-import java.io.ByteArrayInputStream;
-import java.util.Map;
-import java.util.Scanner;
-
 /**
  * Created by ssta on 03/05/15.
  */
@@ -37,9 +33,5 @@ public class Problem12 {
       if (count > 500) break;
     }
     return String.valueOf(SsMath.triangle(i));
-  }
-
-  public static void main(String[] args) {
-    new Problem12().solve();
   }
 }

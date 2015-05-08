@@ -5,10 +5,10 @@ import junit.framework.TestCase;
 /**
  * Created by ssta on 06/05/15.
  */
-public class Problem12Test extends TestCase {
+public class Problem18Test extends TestCase {
 
   public void testSolve() throws Exception {
-    String result = new Problem12().solve();
-    assertEquals("76576500", result);
+    String result = new Problem18().solve();
+    assertEquals("1074", result);
   }
 }
