@@ -84,8 +84,9 @@ public class SsMath {
     // for a proof
     Map<Integer, Integer> f = factorsWithExponents(n);
     int prod = 1;
-    for (int i : f.keySet()) {
-      prod *= (f.get(i) + 1);
+    Set<Map.Entry<Integer, Integer>> es = f.entrySet();
+    for (Map.Entry<Integer, Integer> e : es) {
+      prod *= (e.getValue() + 1);
     }
     return prod;
   }

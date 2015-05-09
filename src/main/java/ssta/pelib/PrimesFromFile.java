@@ -25,7 +25,7 @@ public class PrimesFromFile {
     if (intPrimes == null) {
       List<Long> lp = getLongPrimes();
       List<Integer> ip = new ArrayList<>();
-      for (long l : longPrimes) {
+      for (long l : lp) {
         if (l < Integer.MAX_VALUE) {
           ip.add((int) l);
         }
@@ -39,7 +39,7 @@ public class PrimesFromFile {
     longPrimes = new ArrayList<>();
     InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream
         ("Primes.txt");
-    Scanner sc = new Scanner(is);
+    Scanner sc = new Scanner(is, "UTF-8");
     while (sc.hasNextLong()) {
       longPrimes.add(sc.nextLong());
     }

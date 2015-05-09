@@ -12,10 +12,9 @@ public class Problem3 {
   public String solve() {
     long n = 600851475143L;
     // trial division is fast enough for a number this small...
-    for (int i = 3; i < n && i < n; i += 2) {
+    for (int i = 3; i < n; i += 2) {
       while (n % i == 0) { n /= i;}
     }
-    String result = String.valueOf(n);
-    return result;
+    return String.valueOf(n);
   }
 }

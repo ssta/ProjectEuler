@@ -1,6 +1,7 @@
 package ssta.pe.p11_20;
 
 import java.io.ByteArrayInputStream;
+import java.nio.charset.Charset;
 import java.util.Scanner;
 
 /**
@@ -37,7 +38,8 @@ public class Problem11 {
    * What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
    */
   public String solve() {
-    Scanner sc = new Scanner(new ByteArrayInputStream(grid.getBytes()));
+    Scanner sc = new Scanner(new ByteArrayInputStream(grid.getBytes(Charset
+        .forName("UTF-8"))), "UTF-8");
     int[] a = new int[400];
     int i = 0;
     while (sc.hasNextInt()) {
@@ -49,22 +51,21 @@ public class Problem11 {
       for (int col = 0; col < 20; col++) {
         // for the three possible selections starting at [row*20+col]
         int r = row * 20;
-        int c = col;
         long prod;
         // horizontals
-        prod = (long) a[r + c] * a[r + c + 1] * a[r + c + 2] * a[r + c + 3];
+        prod = (long) a[r + col] * a[r + col + 1] * a[r + col + 2] * a[r + col + 3];
         if (prod > max) max = prod;
         // verticals
-        prod = (long) a[r + c] * a[r + c + 20] * a[r + c + 40] * a[r + c + 60];
+        prod = (long) a[r + col] * a[r + col + 20] * a[r + col + 40] * a[r + col + 60];
         if (prod > max) max = prod;
         if (col < 17) {
           // diagonals_right
-          prod = (long) a[r + c] * a[r + c + 21] * a[r + c + 42] * a[r + c + 63];
+          prod = (long) a[r + col] * a[r + col + 21] * a[r + col + 42] * a[r + col + 63];
           if (prod > max) max = prod;
         }
         if (col > 2) {
           // diagonals_left
-          prod = (long) a[r + c] * a[r + c + 19] * a[r + c + 38] * a[r + c + 57];
+          prod = (long) a[r + col] * a[r + col + 19] * a[r + col + 38] * a[r + col + 57];
           if (prod > max) max = prod;
         }
       }

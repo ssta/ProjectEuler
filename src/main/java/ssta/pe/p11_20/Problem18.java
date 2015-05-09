@@ -1,9 +1,7 @@
 package ssta.pe.p11_20;
 
-import ssta.pelib.SsMath;
-
 import java.io.ByteArrayInputStream;
-import java.util.Arrays;
+import java.nio.charset.Charset;
 import java.util.Scanner;
 
 /**
@@ -41,31 +39,24 @@ public class Problem18 {
    */
   public String solve() {
     // dynamic programming...
-    // slap all the numbers in a flat array
-    int[] a = new int[(int) SsMath.triangle(15)];
-    int[] b = new int[(int) SsMath.triangle(15)];
-    Scanner sc = new Scanner(new ByteArrayInputStream(nums.getBytes()));
-    int i = 0;
-    while (sc.hasNextInt()) {
-      a[i] = sc.nextInt();
-      i++;
-    }
-
-    for (int row = 14; row >= 0; row--) {
-      for (int cell = (int) (SsMath.triangle(row) - 1); cell < SsMath
-          .triangle(row + 1) - 1;
-           cell++) {
-        // make sure we don't run past the end of the array...
-        if (row == 14) {
-          b[cell] = a[cell];
-        } else {
-          b[cell] = a[cell] + max(b[cell + row], b[cell + row + 1]);
-        }
+    // slap all the numbers in an array
+    int[][] a = new int[15][15];
+    Scanner sc = new Scanner(new ByteArrayInputStream(
+        nums.getBytes(Charset.forName("UTF-8"))), "UTF-8");
+    for (int row = 0; row < 15; row++) {
+      String[] b = sc.nextLine().split(" ");
+      for (int col = 0; col < b.length; col++) {
+        a[row][col] = Integer.parseInt(b[col]);
       }
     }
 
-    System.out.println(Arrays.toString(b));
-    return String.valueOf(b[0]);
+    for (int row = 13; row >= 0; row--) {
+      for (int col = 0; col < 14; col++) {
+        a[row][col] = a[row][col] + max(a[row + 1][col], a[row + 1][col + 1]);
+      }
+    }
+
+    return String.valueOf(a[0][0]);
   }
 
   int max(int a, int b) {

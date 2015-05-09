@@ -24,4 +24,16 @@ public class SsString {
     }
     return prod;
   }
+
+  /**
+   * Return the sum of digits in s.  Assumes s ia all digits
+   */
+  public static long sumDigits(String s) {
+    long sum = 0;
+    for (char c : s.toCharArray()) {
+      sum += c - '0';
+    }
+    return sum;
+  }
+
 }
