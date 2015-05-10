@@ -168,16 +168,38 @@ public class SsMath {
     return collatzChain(l).size();
   }
 
-  public static BigInteger bigFactorial(int n){
-    assert n>=0;
+  public static BigInteger bigFactorial(int n) {
+    assert n >= 0;
     BigInteger f = BigInteger.ONE;
-    for(int i=1; i<=n; i++){
-      f=f.multiply(BigInteger.valueOf(i));
+    for (int i = 1; i <= n; i++) {
+      f = f.multiply(BigInteger.valueOf(i));
     }
     return f;
   }
 
+  public static int sumDivisors(int n) {
+    // see: http://mathschallenge.net/index.php?section=faq&ref=number/sum_of_divisors
+    // get the factorization with exponents
+    Map<Integer, Integer> factors = factorsWithExponents(n);
+    int prod = 1;
+    for (Map.Entry<Integer, Integer> e : factors.entrySet()) {
+      int t = (int) (Math.pow(e.getKey(), e.getValue() + 1) - 1) / (e.getKey() -
+          1);
+      //System.out.println("" + e.getKey() + "^" + e.getValue() + " --> " + t);
+      prod *= t;
+    }
+
+    return prod;
+  }
+
+  /**
+   * Proper divisors are the same as all divisors except n is not counted
+   */
+  public static int sumProperDivisors(int n) {
+    return sumDivisors(n) - n;
+  }
+
   public static void main(String[] args) {
-    System.out.println(bigFactorial(5));
+    System.out.println(sumProperDivisors(220));
   }
 }
