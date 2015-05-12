@@ -27,7 +27,7 @@ public class Problem22 {
     // line rather than CSV.  I still do the reading/sorting in java...
     // cat/tr is easier
     Scanner sc = new Scanner(ClassLoader.getSystemResourceAsStream
-        ("p022_names.txt"));
+        ("p022_names.txt"), "UTF-8");
     TreeSet<String> nameSet = new TreeSet<>();
     while (sc.hasNextLine()) {
       nameSet.add(sc.nextLine().trim());

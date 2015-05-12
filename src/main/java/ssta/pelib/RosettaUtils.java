@@ -1,5 +1,7 @@
 package ssta.pelib;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -40,7 +42,7 @@ public class RosettaUtils {
     return true;
   }
 
-  public static <T extends Comparable<? super T>> ArrayList<ArrayList<T>> Permutations(ArrayList<T> d) {
+  public static <T extends Comparable<? super T>> ArrayList<ArrayList<T>> permutations(ArrayList<T> d) {
     ArrayList<ArrayList<T>> result = new ArrayList<>();
     Collections.sort(d);
     do {
@@ -82,6 +84,7 @@ public class RosettaUtils {
    * @throws Exception Thrown when cyclic dependency is detected, error message also
    *                   contains elements in cycle.
    */
+  @SuppressFBWarnings({"WMI_WRONG_MAP_ITERATOR"})
   public static <T> ArrayList<T> tSort(java.util.Map<T, ArrayList<T>> g)
       throws Exception
   /**
@@ -115,10 +118,11 @@ public class RosettaUtils {
     while (!S.isEmpty()) {
       if (V.add(n = S.poll()))
         L.add(n);
-      for (T t : g.keySet())
+      for (T t : g.keySet()) {
         if (g.get(t) != null && !g.get(t).isEmpty() && !V.contains(t)
             && V.containsAll(g.get(t)))
           S.add(t);
+      }
     }
 
     // Return result.

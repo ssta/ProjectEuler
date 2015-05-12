@@ -19,7 +19,7 @@ public class Problem24 {
   public String solve() {
     // stole some code from Rosetta for this...writing a non-buggy permuter
     // is a bitch!
-    ArrayList<ArrayList<Integer>> list = RosettaUtils.Permutations(RosettaUtils.mRange(0, 9));
+    ArrayList<ArrayList<Integer>> list = RosettaUtils.permutations(RosettaUtils.mRange(0, 9));
     final StringBuilder sb = new StringBuilder();
     String r = "";
     list.get(999999).stream().forEach(sb::append);
