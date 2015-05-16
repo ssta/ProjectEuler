@@ -10,10 +10,6 @@ import java.util.Set;
  */
 public class Problem32 {
 
-  public static void main(String[] args) {
-    System.out.println(new Problem32().solve());
-  }
-
   /**
    * We shall say that an n-digit number is pandigital if it makes use of all
    * the digits 1 to n exactly once; for example, the 5-digit number, 15234, is
@@ -29,19 +25,19 @@ public class Problem32 {
    * include it once in your sum.
    */
   public String solve() {
-    Set<Long> prods = new HashSet<>();
-    for (long a = 1; a < 9876543321L; a++) {
-      for (int b = 1; b < Math.ceil((double) 987654321 / a); b++) {
-        long c = a * b;
-        if (c > 987654321 || c < 100000000) {
-          continue;
-        }
-        if (c > 100000000 && SsMath.isPandigital(c)) {
+    Set<Integer> prods = new HashSet<>();
+    // guessed at an upper limit until I got the right answer...
+    // I could have been cleverer, but this is clever enough and fairly fast
+    int MAX = 2000;
+    for (int a = 1; a < MAX; a++) {
+      for (int b = 1; b < MAX; b++) {
+        int c = a * b;
+        String s = "" + a + "" + b + "" + c;
+        if (SsMath.isPandigital(s)) {
           prods.add(c);
-          System.out.println("Added " + c);
         }
       }
     }
-    return String.valueOf(prods.size());
+    return String.valueOf(prods.stream().reduce(0, Integer::sum));
   }
 }

@@ -203,11 +203,10 @@ public class SsMath {
     System.out.println(sumProperDivisors(220));
   }
 
-  public static boolean isPandigital(long l) {
+  public static boolean isPandigital(String s) {
     // sort the digits and compare to "987654321"
-    char[] c = String.valueOf(l).toCharArray();
+    char[] c = s.toCharArray();
     Arrays.sort(c);
-    String s = new String(c);
-    return "123456789".equals(s);
+    return "123456789".equals(new String(c));
   }
 }
