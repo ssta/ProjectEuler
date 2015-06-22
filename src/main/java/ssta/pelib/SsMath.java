@@ -7,6 +7,11 @@ import java.util.*;
  * Created by ssta on 03/05/15.
  */
 public class SsMath {
+  // array of strings for use in comparing for pandigital testing
+  private static String[] panComps = new String[]{"", "1", "12", "123",
+      "1234", "12345", "123456", "1234567", "12345678", "123456789",
+      "0123456789"};
+
   /**
    * return the ith triangle number
    */
@@ -203,8 +208,22 @@ public class SsMath {
   public static boolean isPandigital(String s) {
     // sort the digits and compare to "987654321"
     char[] c = s.toCharArray();
+    int len = s.length();
+    if (len > 9) { return false;}
     Arrays.sort(c);
-    return "123456789".equals(new String(c));
+
+    return panComps[len].equals(new String(c));
+  }
+
+  /**
+   * Check for pandigitalness and also for length.  Convenience method
+   */
+  public static boolean isPandigitalLength(String s, int len) {
+    if (s == null || s.length() != len) {
+      return false;
+    } else {
+      return isPandigital(s);
+    }
   }
 
   /**

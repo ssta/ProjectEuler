@@ -33,7 +33,7 @@ public class Problem32 {
       for (int b = 1; b < MAX; b++) {
         int c = a * b;
         String s = "" + a + "" + b + "" + c;
-        if (SsMath.isPandigital(s)) {
+        if (SsMath.isPandigitalLength(s, 9)) {
           prods.add(c);
         }
       }

@@ -1,5 +1,7 @@
 package ssta.pe.p31_40;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.util.*;
 
 /**
@@ -12,6 +14,7 @@ import java.util.*;
  * <p>
  * Created by ssta on 17/05/15.
  */
+@SuppressFBWarnings({"WMI_WRONG_MAP_ITERATOR"})
 public class Problem39 {
   public static void main(String[] args) {
     Problem39 p = new Problem39();
