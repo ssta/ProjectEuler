@@ -30,7 +30,6 @@ public class Problem41 {
         .collect(Collectors.toList());
 
     int p = 0;
-    System.out.println(primes.size());
     for (int i = primes.size() - 1; i > 0; i--) {
       if (SsMath.isPandigital(String.valueOf(primes.get(i)))) {
         p = primes.get(i);

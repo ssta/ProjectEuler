@@ -200,4 +200,20 @@ public class RosettaUtils {
       result.add(i);
     return result;
   }
+
+  public static ArrayList<Long> mRangeLong(long from, long to) {
+    if (from == to)
+      return new ArrayList<>(0);
+    if (from < to) {
+      ArrayList<Long> result = new ArrayList<>();
+      for (long i = from; i <= to; i++)
+        result.add(i);
+      return result;
+    }
+    ArrayList<Long> result = new ArrayList<>();
+    for (long i = from; i >= to; i--)
+      result.add(i);
+    return result;
+  }
+
 }
