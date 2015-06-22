@@ -28,7 +28,7 @@ public class Problem43 {
 
   public String solve() {
     ArrayList<ArrayList<Integer>> list = RosettaUtils.permutations(RosettaUtils.mRange(0, 9));
-    StringBuilder sb = new StringBuilder();
+    StringBuilder sb;
     long sum = 0L;
     for (ArrayList<Integer> l : list) {
       sb = new StringBuilder();
@@ -44,7 +44,6 @@ public class Problem43 {
 
   private boolean testString(String s) {
     if (isDivisibleBy(s, 2, 2, 4)) {
-      //System.out.println("third case passed for: " + s);
       if (isDivisibleBy(s, 3, 3, 5)) {
         if (isDivisibleBy(s, 5, 4, 6)) {
           if (isDivisibleBy(s, 7, 5, 7)) {
