@@ -199,9 +199,6 @@ public class SsMath {
     return sumDivisors(n) - n;
   }
 
-  public static void main(String[] args) {
-    System.out.println(sumProperDivisors(220));
-  }
 
   public static boolean isPandigital(String s) {
     // sort the digits and compare to "987654321"
@@ -209,4 +206,18 @@ public class SsMath {
     Arrays.sort(c);
     return "123456789".equals(new String(c));
   }
+
+  /**
+   * Returns teh greatest common divisor of a and b.
+   * Uses euclid's method
+   */
+  public static int gcd(int a, int b) {
+    return (b == 0) ? a : gcd(b, a % b);
+  }
+
+  public static void main(String[] args) {
+    System.out.println(gcd(12, 24));
+  }
+
+
 }
