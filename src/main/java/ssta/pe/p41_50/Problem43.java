@@ -27,6 +27,8 @@ public class Problem43 {
   }
 
   public String solve() {
+    // this mechanism is slow as slow can be.  Need to find a faster way to do
+    // this!
     ArrayList<ArrayList<Integer>> list = RosettaUtils.permutations(RosettaUtils.mRange(0, 9));
     StringBuilder sb;
     long sum = 0L;
