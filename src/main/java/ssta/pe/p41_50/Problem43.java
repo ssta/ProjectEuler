@@ -43,13 +43,13 @@ public class Problem43 {
   }
 
   private boolean testString(String s) {
-    if (isDivisibleBy(s, 2, 2, 4)) {
-      if (isDivisibleBy(s, 3, 3, 5)) {
-        if (isDivisibleBy(s, 5, 4, 6)) {
-          if (isDivisibleBy(s, 7, 5, 7)) {
-            if (isDivisibleBy(s, 11, 6, 8)) {
-              if (isDivisibleBy(s, 13, 7, 9)) {
-                if (isDivisibleBy(s, 17, 8, 10)) {
+    if (subStringIsDivisibleBy(s, 2, 2, 4)) {
+      if (subStringIsDivisibleBy(s, 3, 3, 5)) {
+        if (subStringIsDivisibleBy(s, 5, 4, 6)) {
+          if (subStringIsDivisibleBy(s, 7, 5, 7)) {
+            if (subStringIsDivisibleBy(s, 11, 6, 8)) {
+              if (subStringIsDivisibleBy(s, 13, 7, 9)) {
+                if (subStringIsDivisibleBy(s, 17, 8, 10)) {
                   return true;
                 }
               }
@@ -61,7 +61,7 @@ public class Problem43 {
     return false;
   }
 
-  private boolean isDivisibleBy(String s, int div, int start, int end) {
+  private boolean subStringIsDivisibleBy(String s, int div, int start, int end) {
     int i = Integer.parseInt(s.substring(start - 1, end));
     return i % div == 0;
   }
