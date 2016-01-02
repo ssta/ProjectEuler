@@ -22,7 +22,7 @@ public class Problem45 {
   }
 
   /**
-   * Returns the nth triangle numer
+   * Returns the nth triangle number
    */
   private long tri(long n) {
     return n * (n + 1) / 2;
@@ -37,7 +37,7 @@ public class Problem45 {
   }
 
   /**
-   * returns true IFF n is hexagonal
+   * Returns true IFF n is hexagonal
    */
   private boolean isHexagonal(long n) {
     double t = (Math.sqrt(1 + 8 * n) + 1.0) / 4.0;
