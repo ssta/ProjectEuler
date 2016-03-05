@@ -230,7 +230,7 @@ public class SsMath {
    * Returns teh greatest common divisor of a and b.
    * Uses euclid's method
    */
-  public static int gcd(int a, int b) {
+  public static long gcd(long a, long b) {
     return (b == 0) ? a : gcd(b, a % b);
   }
 

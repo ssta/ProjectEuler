@@ -5,17 +5,13 @@ package ssta.pe;
  */
 public class Main {
   public static void main(String[] args) {
-    int x = 1;
-    int y = 1;
-    int z = 2;
-    if ((y = ++x) == z--) {
-      System.out.println(z++);
-    } else {
-      System.out.println("fuck me!");
-    }
-    System.out.println(z);
-    y = 1;
-    x = y++ + y;
-    System.out.println(x);
+    String s = "AcademicSession.AcadSessActionValue=UCRecord/UndergraduateAdmissionsRecord/AdmissionsApplication/Applicant/SelfReportedAcademicRecord/AcademicSession/@action";
+    String[] s2 = s.split("=");
+    System.out.println(s2.length);
+    System.out.println(s2[0]);
+    String[] s3 = s2[0].split("\\.");
+    System.out.println(s3.length);
+    //line.setTable(s3[0]);
+    //line.setField(s3[1]);
   }
 }
