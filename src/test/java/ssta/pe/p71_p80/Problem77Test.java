@@ -1,5 +1,6 @@
 package ssta.pe.p71_p80;
 
+import ssta.pe.p071_p080.Problem77;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

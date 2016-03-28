@@ -1,5 +1,6 @@
 package ssta.pe.p1_10;
 
+import ssta.pe.p001_010.Problem1;
 import junit.framework.TestCase;
 
 /**

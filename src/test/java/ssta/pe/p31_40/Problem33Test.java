@@ -1,5 +1,6 @@
 package ssta.pe.p31_40;
 
+import ssta.pe.p031_040.Problem33;
 import junit.framework.TestCase;
 
 /**
