@@ -3,13 +3,11 @@ package ssta.pe.p011_020;
 import ssta.pelib.SsMath;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem15 {
+class Problem15 {
 
   /** Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
    *

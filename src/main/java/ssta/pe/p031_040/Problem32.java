@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem32 {
+class Problem32 {
 
   /**
    * We shall say that an n-digit number is pandigital if it makes use of all

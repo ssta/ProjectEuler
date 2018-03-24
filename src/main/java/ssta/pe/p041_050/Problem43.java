@@ -2,7 +2,6 @@ package ssta.pe.p041_050;
 
 import ssta.pelib.RosettaUtils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -19,8 +18,8 @@ import java.util.ArrayList;
  * d8d9d10=289 is divisible by 17
  * Find the sum of all 0 to 9 pandigital numbers with this property.
  */
-public class Problem43 {
-  public static void main(String[] args) throws IOException {
+class Problem43 {
+  public static void main(String[] args) {
 
     Problem43 p = new Problem43();
     System.out.println(p.solve());
@@ -34,7 +33,7 @@ public class Problem43 {
     long sum = 0L;
     for (ArrayList<Integer> l : list) {
       sb = new StringBuilder();
-      l.stream().forEach(sb::append);
+      l.forEach(sb::append);
       String s = sb.toString();
       if (testString(s)) {
         sum += Long.parseLong(s);
@@ -51,9 +50,7 @@ public class Problem43 {
           if (subStringIsDivisibleBy(s, 7, 5, 7)) {
             if (subStringIsDivisibleBy(s, 11, 6, 8)) {
               if (subStringIsDivisibleBy(s, 13, 7, 9)) {
-                if (subStringIsDivisibleBy(s, 17, 8, 10)) {
-                  return true;
-                }
+                return subStringIsDivisibleBy(s, 17, 8, 10);
               }
             }
           }

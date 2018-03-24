@@ -6,7 +6,7 @@ import java.util.TreeSet;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem29 {
+class Problem29 {
 
   /**
    * Consider all integer combinations of ab for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
@@ -25,9 +25,9 @@ public class Problem29 {
     // brute force and ugly.  There must be some analytical method, but I
     // don't know how...maybe something around distinct factors...
     Set<Double> powers = new TreeSet<>();
-    int MAX = 100;
-    for (int a = 2; a <= 100; a++) {
-      for (int b = 2; b <= 100; b++) {
+    final int MAX = 100;
+    for (int a = 2; a <= MAX; a++) {
+      for (int b = 2; b <= MAX; b++) {
         double d = Math.pow(a, b);
         powers.add(d);
       }

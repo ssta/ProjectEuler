@@ -21,7 +21,7 @@ import java.util.List;
 public class Problem77 {
 
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     Problem77 p = new Problem77();
     System.out.println(p.solve());
   }
@@ -35,9 +35,9 @@ public class Problem77 {
     while (true) {
       int[] ways = new int[x + 1];
       ways[0] = 1;
-      for (int i = 0; i < primes.length; i++) {
-        for (int j = primes[i]; j <= x; j++) {
-          ways[j] += ways[j - primes[i]];
+      for (int prime : primes) {
+        for (int j = prime; j <= x; j++) {
+          ways[j] += ways[j - prime];
         }
       }
       if (ways[x] > 5000) { break; }

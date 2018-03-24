@@ -5,12 +5,12 @@ import ssta.pelib.SsMath;
 /**
  * Created by ssta on 13/01/16.
  */
-public class P75 {
+class P75 {
   public static void main(String[] args) {
     System.out.println(new P75().solve());
   }
 
-  public String solve() {
+  private String solve() {
     final long MAX = 1500000;
 
     // to hold a count of each perimeter found

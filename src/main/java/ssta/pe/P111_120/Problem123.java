@@ -2,7 +2,7 @@ package ssta.pe.P111_120;
 
 import java.util.List;
 
-public class Problem123 {
+class Problem123 {
   
   public static void main(String[] args) {
     System.out.println(new Problem123().solve());

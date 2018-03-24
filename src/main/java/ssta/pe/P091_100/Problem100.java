@@ -3,7 +3,7 @@ package ssta.pe.P091_100;
 /**
  * Created by ssta on 05/03/16.
  */
-public class Problem100 {
+class Problem100 {
   public static void main(String[] args) {
     System.out.println(new Problem100().solve());
   }

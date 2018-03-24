@@ -3,7 +3,7 @@ package ssta.pe.p031_040;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem31 {
+class Problem31 {
 
   /**
    * In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:

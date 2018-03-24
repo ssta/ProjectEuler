@@ -3,7 +3,7 @@ package ssta.pe.p001_010;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem3 {
+class Problem3 {
   /**
    * The prime factors of 13195 are 5, 7, 13 and 29.
    * <p>

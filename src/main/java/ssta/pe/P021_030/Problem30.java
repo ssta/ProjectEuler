@@ -3,7 +3,7 @@ package ssta.pe.P021_030;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem30 {
+class Problem30 {
 
   /**
    * Surprisingly there are only three numbers that can be written as the sum

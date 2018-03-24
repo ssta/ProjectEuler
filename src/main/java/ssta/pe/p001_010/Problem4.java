@@ -5,7 +5,7 @@ import ssta.pelib.SsString;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem4 {
+class Problem4 {
   /**
    * A palindromic number reads the same both ways. The largest palindrome made
    * from the product of two 2-digit numbers is 9009 = 91 × 99.
@@ -27,7 +27,6 @@ public class Problem4 {
         }
       }
     }
-    String result = String.valueOf(max);
-    return result;
+    return String.valueOf(max);
   }
 }

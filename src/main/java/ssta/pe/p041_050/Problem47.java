@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +23,7 @@ import java.util.Set;
  * <p>
  * Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
  */
-public class Problem47 {
+class Problem47 {
 
   public static void main(String[] args) throws Exception {
 
@@ -34,13 +35,11 @@ public class Problem47 {
     Set<String> set = new HashSet<>();
     // remove everything before the :
     String[] s = nums.split(" ");
-    for (String num : s) {
-      set.add(num);
-    }
+    Collections.addAll(set, s);
     return set.size();
   }
 
-  public String solve() throws IOException, InterruptedException {
+  public String solve() throws IOException {
     // cheat like buggery and use factor(1) (faster than doing it in java)
     // the file factors.txt is the ouyput of: factor 2 200000 (took 0.2s to run)
 

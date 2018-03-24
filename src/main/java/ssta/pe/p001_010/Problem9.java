@@ -5,7 +5,7 @@ import ssta.pelib.SsMath;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem9 {
+class Problem9 {
   /**
    * A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
    * <p>

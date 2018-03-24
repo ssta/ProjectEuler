@@ -3,9 +3,9 @@ package ssta.pe.p031_040;
 /**
  * Created by ssta on 17/05/15.
  */
-public class Problem34 {
+class Problem34 {
   // hardwire 0!..9! to avoid needing to compute them -- significant speedup!
-  static final int[] facts = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
+  private static final int[] facts = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
 
   /**
    * 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.

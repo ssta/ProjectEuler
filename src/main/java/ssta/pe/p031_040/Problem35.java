@@ -9,9 +9,9 @@ import java.util.TreeSet;
 /**
  * Created by ssta on 17/05/15.
  */
-public class Problem35 {
+class Problem35 {
   // global evilness, but simplifies life
-  TreeSet<Integer> primes = new TreeSet<>();
+  private final TreeSet<Integer> primes = new TreeSet<>();
 
   public static void main(String[] args) {
     System.out.println(new Problem35().solve());

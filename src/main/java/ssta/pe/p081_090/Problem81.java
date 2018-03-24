@@ -9,12 +9,12 @@ import java.util.Scanner;
  * ssta.pe.p81_90.Problem81, created on 01/03/2016 15:01 <p>
  * @author StephenSt
  */
-public class Problem81 {
+class Problem81 {
   public static void main(String[] args) {
     System.out.println(new Problem81().solve());
   }
 
-  public String solve() {
+  private String solve() {
     // read the file...
     int[][] matrix = new int[80][80];
     Scanner sc = new Scanner(this.getClass().getResourceAsStream("/p081_matrix.txt"));

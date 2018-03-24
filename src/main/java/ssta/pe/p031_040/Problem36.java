@@ -5,7 +5,7 @@ import ssta.pelib.SsString;
 /**
  * Created by ssta on 17/05/15.
  */
-public class Problem36 {
+class Problem36 {
   public static void main(String[] args) {
     System.out.println(new Problem36().solve());
   }

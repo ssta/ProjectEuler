@@ -8,15 +8,15 @@ import java.util.Map;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem14 {
+class Problem14 {
 
 
-  static final Map<Long, Long> lengths = new HashMap<>();
+  private static final Map<Long, Long> lengths = new HashMap<>();
 
   /**
    * Recursively determine the chain length for l
    */
-  public static long collatzChainLength(long l) {
+  private static long collatzChainLength(long l) {
     // base case, if l=1 then len=1
     if (l == 1) return 1;
     if (lengths.containsKey(l)) {
@@ -48,6 +48,7 @@ public class Problem14 {
    * <p>
    * NOTE: Once the chain starts the terms are allowed to go above one million.
    */
+  @SuppressWarnings("unused") // keep for historical reasons
   public String solve_orig() {
     // NOTE: This is my initial attempt. It takes over a second to run which
     // I find unacceptably slow, so I'm rewriting it to cache collatz chain

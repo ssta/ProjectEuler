@@ -19,15 +19,15 @@ import java.util.List;
  Find the least value of n for which p(n) is divisible by one million.
 
  */
-public class Problem78 {
+class Problem78 {
 
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     Problem78 p = new Problem78();
     System.out.println(p.solve());
   }
 
-  public String solve() {
+  private String solve() {
     // blindly following the wikipedia article (without really understanding it! :)
 
     List<Integer> p = new ArrayList<>();

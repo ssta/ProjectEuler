@@ -2,14 +2,14 @@ package ssta.pe.p081_090;
 
 import java.util.Scanner;
 
-public class Problem89 {
+class Problem89 {
   public static void main(String[] args) {
     System.out.println(new Problem89().solve());
   }
 
   private String solve() {
-    int inputLength = 0;
-    int outputLength = 0;
+    int inputLength;
+    int outputLength;
     // read the file into a string
     try (Scanner sc = new Scanner(this.getClass().getResourceAsStream("/p089_roman.txt"))) {
       StringBuilder sb = new StringBuilder();

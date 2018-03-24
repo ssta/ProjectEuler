@@ -2,7 +2,6 @@ package ssta.pe.p041_050;
 
 import ssta.pelib.PrimesFromFile;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -21,9 +20,9 @@ import java.util.List;
  * What is the smallest odd composite that cannot be written as the sum of a
  * prime and twice a square?
  */
-public class Problem46 {
+class Problem46 {
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
 
     Problem46 p = new Problem46();
     System.out.println(p.solve());

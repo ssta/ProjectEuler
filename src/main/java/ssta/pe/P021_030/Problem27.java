@@ -8,7 +8,7 @@ import java.util.TreeSet;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem27 {
+class Problem27 {
 
   /**
    * Euler discovered the remarkable quadratic formula:
@@ -29,8 +29,7 @@ public class Problem27 {
    */
   public String solve() {
     List<Integer> primes = PrimesFromFile.getIntegerPrimes();
-    TreeSet<Integer> pset = new TreeSet<>();
-    pset.addAll(primes);
+    TreeSet<Integer> pset = new TreeSet<>(primes);
     int maxa = 0;
     int maxb = 0;
     int maxprimes = 0;

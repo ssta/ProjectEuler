@@ -11,7 +11,7 @@ package ssta.pe.p031_040;
  * <p>
  * d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
  */
-public class Problem40 {
+class Problem40 {
   public static void main(String[] args) {
     Problem40 p = new Problem40();
     System.out.println(p.solve());

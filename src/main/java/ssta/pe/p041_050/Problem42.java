@@ -14,7 +14,7 @@ import java.util.Set;
  * <p>
  * Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
  */
-public class Problem42 {
+class Problem42 {
   public static void main(String[] args) {
     Problem42 p = new Problem42();
     System.out.println(p.solve());
@@ -23,8 +23,7 @@ public class Problem42 {
   public String solve() {
     /* THe largest score of any word in that file is 192, so we can just
     hardwire the triangular numbers */
-    Set<Integer> tr = new HashSet<>();
-    tr.addAll(Arrays.asList(0, 1, 3, 6, 10, 15, 21, 28, 36, 45,
+    Set<Integer> tr = new HashSet<>(Arrays.asList(0, 1, 3, 6, 10, 15, 21, 28, 36, 45,
         55, 66, 78, 91, 105, 120, 136, 153, 171, 190, 210));
 
     Scanner sc = new Scanner(ClassLoader.getSystemResourceAsStream

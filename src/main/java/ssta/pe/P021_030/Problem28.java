@@ -3,7 +3,7 @@ package ssta.pe.P021_030;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem28 {
+class Problem28 {
 
   /**
    * Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:

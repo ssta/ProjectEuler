@@ -5,9 +5,9 @@ import java.math.BigInteger;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem16 {
+class Problem16 {
 
-  static int sumDigits(String s) {
+  private static int sumDigits(String s) {
     int sum = 0;
     for (char c : s.toCharArray()) {
       sum += c - '0';

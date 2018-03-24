@@ -8,7 +8,7 @@ import java.util.TreeSet;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem22 {
+class Problem22 {
   /**
    * Using names.txt (right click and 'Save Link/Target As...'), a 46K text file
    * containing over five-thousand first names, begin by sorting it into

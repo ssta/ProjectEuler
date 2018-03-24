@@ -2,7 +2,6 @@ package ssta.pe.p041_050;
 
 import ssta.pelib.PrimesFromFile;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,11 +16,11 @@ import java.util.List;
  * What 12-digit number do you form by concatenating the three terms in this
  * sequence?
  */
-public class Problem49 {
+class Problem49 {
 
-  List<Integer> primes = PrimesFromFile.getIntegerPrimes();
+  private final List<Integer> primes = PrimesFromFile.getIntegerPrimes();
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     Problem49 p = new Problem49();
     System.out.println(p.solve());
   }
@@ -37,15 +36,19 @@ public class Problem49 {
     return primes.contains(n);
   }
 
-  public String solve() throws IOException, InterruptedException {
+  public String solve() {
     // Turns out that the answer also is increasing by 3330 (weird, but true)
     // which allows for a significant optimisation...
 
     for (int p : primes) {
       // only want to look at 4 digit primes.
-      if (p < 1000) {continue;}
+      if (p < 1000) {
+        continue;
+      }
       // we don't want to repeat the one the question gives us...
-      if (p == 1487) {continue;}
+      if (p == 1487) {
+        continue;
+      }
       if (isPrime(p + 3330) && isPrime(p + 6660)) {
         if (sortDigits(p).equals(sortDigits(p + 3330)) &&
             sortDigits(p).equals(sortDigits(p + 6660)))

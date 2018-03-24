@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class SsMath {
   // array of strings for use in comparing for pandigital testing
-  private static String[] panComps = new String[]{"", "1", "12", "123",
+  private static final String[] panComps = new String[]{"", "1", "12", "123",
       "1234", "12345", "123456", "1234567", "12345678", "123456789",
       "0123456789"};
 
@@ -99,7 +99,7 @@ public class SsMath {
   /**
    * Returns a list of prime factors of n
    */
-  public static List<Integer> factors(int n) {
+  private static List<Integer> factors(int n) {
     List<Integer> factors = new ArrayList<>();
     List<Integer> primes = PrimesFromFile.getIntegerPrimes();
     for (int i : primes) {
@@ -118,7 +118,7 @@ public class SsMath {
    * Returns a map of prime factors with exponents instead of repeated
    * values
    */
-  public static Map<Integer, Integer> factorsWithExponents(int n) {
+  private static Map<Integer, Integer> factorsWithExponents(int n) {
     List<Integer> factors = factors(n);
     Map<Integer, Integer> f = new HashMap<>(factors.size());
     for (int i : factors) {
@@ -154,7 +154,7 @@ public class SsMath {
    * @param l the number from which to start the chain
    * @return a list containing the collatz chain from l to 1
    */
-  public static List<Long> collatzChain(long l) {
+  private static List<Long> collatzChain(long l) {
     // linked list is best (a rare case) here
     List<Long> result = new LinkedList<>();
     result.add(l);
@@ -182,7 +182,7 @@ public class SsMath {
     return f;
   }
 
-  public static int sumDivisors(int n) {
+  private static int sumDivisors(int n) {
     // see: http://mathschallenge.net/index.php?section=faq&ref=number/sum_of_divisors
     // get the factorization with exponents
     Map<Integer, Integer> factors = factorsWithExponents(n);
@@ -219,11 +219,7 @@ public class SsMath {
    * Check for pandigitalness and also for length.  Convenience method
    */
   public static boolean isPandigitalLength(String s, int len) {
-    if (s == null || s.length() != len) {
-      return false;
-    } else {
-      return isPandigital(s);
-    }
+    return s != null && s.length() == len && isPandigital(s);
   }
 
   /**

@@ -9,14 +9,14 @@ package ssta.pe.p081_090;
  *
  * @author ssta
  */
-public class Problem85 {
+class Problem85 {
 
   public static void main(String[] args) {
     System.out.println(new Problem85().solve());
   }
 
   // horrible bruite-force solution (that happens to run quick enough!)
-  public String solve() {
+  private String solve() {
     int closestCount=0;
     int closestArea=0;
     int AIM=2000000;

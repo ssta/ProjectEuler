@@ -15,7 +15,7 @@ import java.util.*;
  * Created by ssta on 17/05/15.
  */
 @SuppressFBWarnings({"WMI_WRONG_MAP_ITERATOR"})
-public class Problem39 {
+class Problem39 {
   public static void main(String[] args) {
     Problem39 p = new Problem39();
     System.out.println(p.solve());
@@ -27,22 +27,18 @@ public class Problem39 {
 
     Map<Integer, Set<List<Integer>>> triples = new HashMap<>();
     for (int i = 1; i <= 1000; i++) {
-      Set<List<Integer>> s = new HashSet<>();
-      triples.put(i, s);
+      triples.put(i, new HashSet<>());
     }
 
     // evil brute-force method
     for (int a = 3; a < 500; a++) {
       for (int b = 3; b < 500; b++) {
         int c = (int) Math.sqrt((a * a) + (b * b));
-        if ((c * c) == (a * a) + (b * b)) {
-          if (a + b + c <= 1000) {
-            Integer[] triple = sort3(a, b, c);
-            // System.out.println("Found triple: " + Arrays.toString(triple));
-            int perim = a + b + c;
-            List<Integer> t = Arrays.asList(triple);
-            triples.get(perim).add(t);
-          }
+        if ((c * c) == (a * a) + (b * b) && a + b + c <= 1000) {
+          Integer[] triple = sort3(a, b, c);
+          int perim = a + b + c;
+          List<Integer> t = Arrays.asList(triple);
+          triples.get(perim).add(t);
         }
       }
     }

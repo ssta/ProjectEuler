@@ -8,7 +8,7 @@ import java.math.BigInteger;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem20 {
+class Problem20 {
   /**
    * n! means n × (n − 1) × ... × 3 × 2 × 1
    * <p>

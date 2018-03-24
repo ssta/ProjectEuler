@@ -8,12 +8,13 @@ import java.util.Random;
  *
  * @author ssta
  */
-public class Problem84 {
+class Problem84 {
 
   public static void main(String[] args) {
     System.out.println(new Problem84().solve());
   }
 
+  @SuppressWarnings("IfCanBeSwitch")
   private String solve() {
     Integer[] board = new Integer[40];
     for (int i = 0; i < board.length; i++) {
@@ -43,44 +44,55 @@ public class Problem84 {
           if (position == 7 || position == 22 || position == 36) {
             // 10 of 16 cards make us move
             int x = rnd.nextInt(16) + 1;
-            if (x == 1) {
-              // advance to go
-              position = 0;
-            } else if (x == 2) {
-              // go to jail
-              position = 10;
-            } else if (x == 3) {
-              // co to c1 (11)
-              position = 11;
-            } else if (x == 4) {
-              // go to e3 (24)
-              position = 24;
-            } else if (x == 5) {
-              // go to h2 (39)
-              position = 39;
-            } else if (x == 6) {
-              // go to R1 (5)
-              position = 5;
-            } else if (x == 7 || x == 8) {
-              // go to next R (5, 15, 25, 35)
-              if (position == 7) {
-                position = 15;
-              } else if (position == 22) {
-                position = 25;
-              } else {
+            switch (x) {
+              case 1:
+                // advance to go
+                position = 0;
+                break;
+              case 2:
+                // go to jail
+                position = 10;
+                break;
+              case 3:
+                // co to c1 (11)
+                position = 11;
+                break;
+              case 4:
+                // go to e3 (24)
+                position = 24;
+                break;
+              case 5:
+                // go to h2 (39)
+                position = 39;
+                break;
+              case 6:
+                // go to R1 (5)
                 position = 5;
-              }
-            } else if (x == 9) {
-              // go to next U (12 or 28)
-              if (position == 22) {
-                position = 28;
-              } else {
-                position = 12;
-              }
-            } else if (x == 10) {
-              // go back three squares
-              // this is why we need to do chance first, because we might land on CC from here
-              position -= 3;
+                break;
+              case 7:
+              case 8:
+                // go to next R (5, 15, 25, 35)
+                if (position == 7) {
+                  position = 15;
+                } else if (position == 22) {
+                  position = 25;
+                } else {
+                  position = 5;
+                }
+                break;
+              case 9:
+                // go to next U (12 or 28)
+                if (position == 22) {
+                  position = 28;
+                } else {
+                  position = 12;
+                }
+                break;
+              case 10:
+                // go back three squares
+                // this is why we need to do chance first, because we might land on CC from here
+                position -= 3;
+                break;
             }
           }
           // CC
@@ -105,18 +117,17 @@ public class Problem84 {
     }
 
     System.out.println(Arrays.toString(board));
-    
-    
+
+
     Integer[] indices = new Integer[board.length];
     for (int i = 0; i < indices.length; i++) {
       indices[i] = i;
     }
 
-    Arrays.sort(indices, (Integer i1, Integer i2) -> board[i1].compareTo(board[i2]));
+    Arrays.sort(indices, Comparator.comparing(i -> board[i]));
 
     // we want the "top 3" off the indices array now.
-    String s = String.valueOf(indices[0]) + String.valueOf(indices[1]) + String.valueOf(indices[2]);
-    return s;
+    return String.valueOf(indices[0]) + String.valueOf(indices[1]) + String.valueOf(indices[2]);
   }
 
 }

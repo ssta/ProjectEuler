@@ -3,7 +3,7 @@ package ssta.pe.p001_010;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem5 {
+class Problem5 {
   /**
    * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
    * <p>
@@ -32,7 +32,6 @@ public class Problem5 {
     r *= 19;// 19
     // 20
 
-    String result = String.valueOf(r);
-    return result;
+    return String.valueOf(r);
   }
 }

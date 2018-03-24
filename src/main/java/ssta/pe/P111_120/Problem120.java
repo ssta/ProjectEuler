@@ -1,6 +1,6 @@
 package ssta.pe.P111_120;
 
-public class Problem120 {
+class Problem120 {
 
   public static void main(String[] args) {
     System.out.println(new Problem120().solve());

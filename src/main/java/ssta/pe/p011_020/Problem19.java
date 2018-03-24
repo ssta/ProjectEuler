@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem19 {
+class Problem19 {
   /**
    * You are given the following information, but you may prefer to do some research for yourself.
    * <p>

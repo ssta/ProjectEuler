@@ -5,7 +5,7 @@ import java.math.BigInteger;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem25 {
+class Problem25 {
 
   /**
    * The Fibonacci sequence is defined by the recurrence relation:

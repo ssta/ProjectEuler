@@ -7,7 +7,7 @@ import junit.framework.TestCase;
  */
 public class Problem10Test extends TestCase {
 
-  public void testSolve() throws Exception {
+  public void testSolve() {
     String result = new Problem10().solve();
     assertEquals("142913828922", result);
   }

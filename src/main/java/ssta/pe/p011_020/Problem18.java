@@ -7,9 +7,9 @@ import java.util.Scanner;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem18 {
+class Problem18 {
 
-  static final String nums = "75\n" +
+  private static final String nums = "75\n" +
       "95 64\n" +
       "17 47 82\n" +
       "18 35 87 10\n" +
@@ -59,7 +59,7 @@ public class Problem18 {
     return String.valueOf(a[0][0]);
   }
 
-  int max(int a, int b) {
+  private int max(int a, int b) {
     return (a > b) ? a : b;
   }
 }

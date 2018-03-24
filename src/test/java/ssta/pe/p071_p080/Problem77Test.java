@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class Problem77Test {
   @Test
-  public void testSolve() throws Exception {
+  public void testSolve() {
     String result = new Problem77().solve();
     assertEquals("71", result);
   }

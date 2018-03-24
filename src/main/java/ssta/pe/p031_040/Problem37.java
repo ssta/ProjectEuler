@@ -7,9 +7,9 @@ import java.util.TreeSet;
 /**
  * Created by ssta on 17/05/15.
  */
-public class Problem37 {
+class Problem37 {
   // a treeset is FAST for lookups
-  TreeSet<Integer> primes = null;
+  private TreeSet<Integer> primes = null;
 
   public static void main(String[] args) {
     Problem37 p = new Problem37();

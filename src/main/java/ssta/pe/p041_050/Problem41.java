@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * <p>
  * What is the largest n-digit pandigital prime that exists?
  */
-public class Problem41 {
+class Problem41 {
   public static void main(String[] args) {
     Problem41 p = new Problem41();
     System.out.println(p.solve());

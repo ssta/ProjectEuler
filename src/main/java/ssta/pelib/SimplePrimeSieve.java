@@ -11,7 +11,7 @@ import java.util.List;
  * Created by ssta on 04/05/15.
  */
 public class SimplePrimeSieve {
-  private List<Long> primes = new ArrayList<>();
+  private final List<Long> primes = new ArrayList<>();
 
   /**
    * Generate primes up to (and including) maxPrime

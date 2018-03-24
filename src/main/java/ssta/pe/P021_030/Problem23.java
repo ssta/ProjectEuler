@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem23 {
+class Problem23 {
   public static void main(String[] args) {
     Problem23 p = new Problem23();
     System.out.println(p.solve());

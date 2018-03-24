@@ -3,7 +3,7 @@ package ssta.pe.p011_020;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem17 {
+class Problem17 {
 
 
   /**

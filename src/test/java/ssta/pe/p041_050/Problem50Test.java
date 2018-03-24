@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Problem50Test {
   @Test
-  public void testSolve() throws Exception {
+  public void testSolve() {
     String result = new Problem50().solve();
     assertEquals("997651", result);
   }

@@ -4,7 +4,7 @@ import ssta.pelib.PrimesFromFile;
 
 import java.util.List;
 
-public class Problem50 {
+class Problem50 {
   private static final int LIMIT = 1_000_000;
 
   public static void main(String[] args) {

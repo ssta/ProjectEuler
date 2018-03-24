@@ -5,7 +5,7 @@ import ssta.pelib.SsMath;
 /**
  * Created by ssta on 03/05/15.
  */
-public class Problem6 {
+class Problem6 {
   /**
    * The sum of the squares of the first ten natural numbers is,
    * <p>
@@ -19,7 +19,6 @@ public class Problem6 {
    */
   public String solve() {
     long r = SsMath.sqSum(100) - SsMath.sqPyramidal(100);
-    String result = String.valueOf(r);
-    return result;
+    return String.valueOf(r);
   }
 }
